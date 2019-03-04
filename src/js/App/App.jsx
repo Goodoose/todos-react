@@ -24,7 +24,7 @@ class App extends React.Component {
   handlerChange(newTodo) {
     if (newTodo === 'ENTER') {
       this.setState(({ todos, inputValue }) => {
-        const newTodos = [...todos, { content: inputValue, imageUrl: '../../images/unchecked.svg' }];
+        const newTodos = [...todos, { content: inputValue, imageUrl: 'images/unchecked.svg' }];
         return {
           todos: newTodos,
           todosTemp: newTodos,
@@ -50,8 +50,8 @@ class App extends React.Component {
   handlerChangeImage(id) {
     this.setState((prevState) => {
       const { todos } = prevState;
-      const imgUnchecked = '../../images/unchecked.svg';
-      const imgChecked = '../../images/checked.svg';
+      const imgUnchecked = 'images/unchecked.svg';
+      const imgChecked = 'images/checked.svg';
       todos[id].imageUrl = todos[id].imageUrl === imgUnchecked ? imgChecked : imgUnchecked;
       return {
         todos,
@@ -76,19 +76,19 @@ class App extends React.Component {
 
   buttonActive() {
     this.setState(({ todosTemp }) => ({
-      todos: todosTemp.filter(img => img.imageUrl === '../../images/unchecked.svg'),
+      todos: todosTemp.filter(img => img.imageUrl === 'images/unchecked.svg'),
     }));
   }
 
   buttonCompleted() {
     this.setState(({ todosTemp }) => ({
-      todos: todosTemp.filter(img => img.imageUrl === '../../images/checked.svg'),
+      todos: todosTemp.filter(img => img.imageUrl === 'images/checked.svg'),
     }));
   }
 
   buttonClearCompleted() {
     this.setState(({ todosTemp }) => {
-      const newTodos = todosTemp.filter(img => img.imageUrl === '../../images/unchecked.svg');
+      const newTodos = todosTemp.filter(img => img.imageUrl === 'images/unchecked.svg');
       return {
         todos: newTodos,
         todosTemp: newTodos,
@@ -113,7 +113,7 @@ class App extends React.Component {
               onChange={event => this.handlerChangeTodo(event.target.value, index)}
             />
             <a href="#" className="container__image--hide" onClick={() => this.handlerChangeDelete(index)}>
-              <img alt="close" className="container__image--close" src="../../images/close.svg" />
+              <img alt="close" className="container__image--close" src="images/close.svg" />
             </a>
           </div>
         </li>
@@ -124,7 +124,7 @@ class App extends React.Component {
   render() {
     const { todosTemp, inputValue } = this.state;
     const todosRender = this.renderItems();
-    const counterItems = todosTemp.filter(img => img.imageUrl === '../../images/unchecked.svg').length;
+    const counterItems = todosTemp.filter(img => img.imageUrl === 'images/unchecked.svg').length;
 
     return (
       <div>

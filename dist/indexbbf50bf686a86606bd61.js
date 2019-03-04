@@ -24626,7 +24626,7 @@ function (_React$Component) {
               inputValue = _ref.inputValue;
           var newTodos = [].concat(_toConsumableArray(todos), [{
             content: inputValue,
-            imageUrl: '../../images/unchecked.svg'
+            imageUrl: 'images/unchecked.svg'
           }]);
           return {
             todos: newTodos,
@@ -24657,8 +24657,8 @@ function (_React$Component) {
     value: function handlerChangeImage(id) {
       this.setState(function (prevState) {
         var todos = prevState.todos;
-        var imgUnchecked = '../../images/unchecked.svg';
-        var imgChecked = '../../images/checked.svg';
+        var imgUnchecked = 'images/unchecked.svg';
+        var imgChecked = 'images/checked.svg';
         todos[id].imageUrl = todos[id].imageUrl === imgUnchecked ? imgChecked : imgUnchecked;
         return {
           todos: todos,
@@ -24697,7 +24697,7 @@ function (_React$Component) {
         var todosTemp = _ref4.todosTemp;
         return {
           todos: todosTemp.filter(function (img) {
-            return img.imageUrl === '../../images/unchecked.svg';
+            return img.imageUrl === 'images/unchecked.svg';
           })
         };
       });
@@ -24709,7 +24709,7 @@ function (_React$Component) {
         var todosTemp = _ref5.todosTemp;
         return {
           todos: todosTemp.filter(function (img) {
-            return img.imageUrl === '../../images/checked.svg';
+            return img.imageUrl === 'images/checked.svg';
           })
         };
       });
@@ -24720,7 +24720,7 @@ function (_React$Component) {
       this.setState(function (_ref6) {
         var todosTemp = _ref6.todosTemp;
         var newTodos = todosTemp.filter(function (img) {
-          return img.imageUrl === '../../images/unchecked.svg';
+          return img.imageUrl === 'images/unchecked.svg';
         });
         return {
           todos: newTodos,
@@ -24767,7 +24767,7 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           alt: "close",
           className: "container__image--close",
-          src: "../../images/close.svg"
+          src: "images/close.svg"
         }))));
       });
     }
@@ -24781,7 +24781,7 @@ function (_React$Component) {
           inputValue = _this$state.inputValue;
       var todosRender = this.renderItems();
       var counterItems = todosTemp.filter(function (img) {
-        return img.imageUrl === '../../images/unchecked.svg';
+        return img.imageUrl === 'images/unchecked.svg';
       }).length;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "headline"
@@ -25472,4 +25472,4 @@ module.exports = function (css) {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=index302802bd58b46ac3c186.js.map
+//# sourceMappingURL=indexbbf50bf686a86606bd61.js.map
