@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'none',
@@ -18,10 +19,37 @@ module.exports = {
       chunks: ['index'],
     }),
     new CleanWebpackPlugin(['dist/*']),
+    new CopyPlugin([
+      { from: './src/images', to: './images' },
+    ]),
   ],
 
   module: {
     rules: [
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
